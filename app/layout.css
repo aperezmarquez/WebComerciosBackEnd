@@ -1,0 +1,53 @@
+nav {
+    padding-top: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+    background-color: #F0E7DE;
+}
+
+.fondo {
+    background-color: #F0E7DE;
+}
+
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: #FF9D00;
+    inherits: false;
+}
+  
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: #e4a43c;
+    inherits: false;
+}
+
+@property --myColor3 {
+    syntax: '<color>';
+    initial-value: #fbbc57;
+    inherits: false;
+}
+
+@property --porcentaje {
+    syntax: '';
+    initial-value: 32%;
+    inherits: false;
+}
+
+.seccion {
+    --porcentaje: 32%;
+    width: 7.2em;
+
+    font-weight: 500;
+
+    transition: 0.5s;
+    color: #000;
+    background: linear-gradient(90deg, var(--myColor1) 0%, var(--myColor2) var(--porcentaje), var(--myColor3) 100%);
+    transition: --myColor1 0.5s, --myColor2 0.5s, --myColor3 0.5s, --porcentaje 0.5s;
+}
+
+.seccion:hover {
+    color: #000;
+    --myColor1: #00a3ab;
+    --myColor2: #35c3ca;
+    --myColor3: #5adee5;
+}

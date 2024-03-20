@@ -1,0 +1,131 @@
+.commerce {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    margin-top: 3em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    
+    width: 15em;
+    height: 17em;
+}
+
+.commerce-info {
+    width: 15em;
+    height: 7em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+
+    background-color: rgb(33,33,33);
+
+    padding-top: 0.3em;
+    padding-left: 0.7em;
+    padding-bottom: 0.7em;
+    padding-right: 0.7em;
+
+    border-bottom-width: 0.5em;
+    border-color: #fdaf33;
+}
+
+.commerce-tittle {
+    color: #008188;
+
+    transition: 0.3s;
+
+    font-weight: 600;
+    font-size: large;
+
+    word-wrap: break-word;
+}
+
+.commerce-small-description {
+    color: #008188;
+
+    transition: 0.3s;
+
+    font-weight: 400;
+    font-size: small;
+
+    word-wrap: break-word;
+}
+
+.commerce-description {
+    display: none;
+
+    transition: 0.3s;
+
+    color: #008188;
+
+    font-weight: 400;
+    font-size: small;
+
+    word-wrap: break-word;
+}
+
+@property --onOffBoton {
+    initial-value: 1s;
+}
+
+.commerce-footer {
+    --onOffBoton: 0s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    width: 13.7em;
+    height: 7em;
+    transition: display 0s, opacity var(--onOffBoton), height 0.4s;
+
+    opacity: 0;
+}
+
+.commerce-visit {
+    width: 8em;
+    height: 2em;
+
+    padding-left: 0.3em;
+    padding-top: 0.2em;
+
+    transition: 0.5s;
+
+    background-color: #7e0028;
+    color: #d4aeba;
+
+    font-weight: 500;
+}
+
+.commerce-visit:hover {
+    box-shadow: 0 0 10px 5px #7e0028;
+    color: #eedbe1;
+}
+
+.commerce:hover .commerce-footer {
+    --onOffBoton: 1.5s;
+    z-index: 0;
+    
+    height: 15.5em;
+
+    opacity: 1;
+}
+
+.commerce:hover .commerce-info {
+    height: 17em;
+    background-color: rgba(33,33,33,0.8);
+}
+
+.commerce:hover .commerce-tittle {
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.commerce:hover .commerce-small-description {
+    font-size: medium;
+    font-weight: 500;
+}
+
+.commerce:hover .commerce-description {
+    display: block;
+    font-size: medium;
+    font-weight: 500;
+}
