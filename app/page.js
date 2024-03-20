@@ -1,22 +1,6 @@
 import './page.css';
 import Link from 'next/link';
 
-const express = require("express")
-const cors = require("cors")
-require("dotenv").config()
-
-// CONECTAMOS A MONGODB
-const dbConnect = require("./back-end/config/mongo.js")
-const app = express()
-app.use(cors())
-app.use(express.json())
-
-const port = process.env.PORT
-
-app.listen(port, () => {
-    dbConnect()
-})
-
 export default function Home() {
   return (
     <div className='fondo w-full h-full grid sm:grid-cols-1 lg:grid-cols-2 grid-flow-col'>
