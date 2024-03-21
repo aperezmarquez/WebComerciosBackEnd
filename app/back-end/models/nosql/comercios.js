@@ -4,29 +4,23 @@ const mongoose = require("mongoose")
 const CommerceScheme = new mongoose.Schema(
 {
     nombre: {
-        type: String,
-        required: true
+        type: String
     },
     CIF: {
-        type: String,
-        required: true
+        type: String
     },
     direccion: {
-        type: String,
-        required: true
+        type: String
     },
     mail: {
-        type: String,
-        required: true
+        type: String
     },
     telefono: {
-        type: String,
-        required: true
+        type: String
     },
     id: {
         type: Number,
-        unique: true,
-        required: true
+        unique: true
     }
 },
 {
