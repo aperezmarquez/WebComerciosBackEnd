@@ -15,7 +15,7 @@ const getItems = async (req, res) => {
 const createItem = async (req, res) => {
     try {
         // Necesitamos el validator de comercios para hacer matchedData
-        const { body } = matchedData(req)
+        const { body } = req
         const data = await commerceModel.create(body)
         res.send(data)
     } catch (error) {

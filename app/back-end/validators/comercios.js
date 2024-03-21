@@ -9,7 +9,16 @@ const validatorCreateCommerce = [
     check("mail").exists().notEmpty(),
     check("telefono").exists().notEmpty(),
     check("id").exists().notEmpty().isInt(),
-    (req, res, next) => validateResults(req, res, next)
+    (req, res, next) => {
+        return validateResults(req, res, next)
+    }
+]
+
+const validatorGetCommerce = [
+    check("CIF").exists().notEmpty(),
+    (req, res, next) => {
+        return validateResults(req,res,next)
+    }
 ]
 
 module.exports = { validatorCreateCommerce }
