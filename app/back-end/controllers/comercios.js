@@ -11,7 +11,7 @@ const { handleHttpError } = require("../utils/handleError")
 // Con esta funcion devolvemos todos los comercios existentes al cliente que hizo la peticion GET
 const getItems = async (req, res) => {
     try {
-        const data = await commerceModel.find({})
+        const data = await commerceModel.find({}).sort({cif:1})
         res.send(data)
     } catch (error) {
         handleHttpError(res, "ERROR_GET_ITEMS_COMMERCE")
@@ -23,11 +23,11 @@ const getItems = async (req, res) => {
 const createItem = async (req, res) => {
     try {
         // Necesitamos el validator de comercios para hacer matchedData
-        const { body } = req
+        const body = matchedData(req)
         const data = await commerceModel.create(body)
         res.send(data)
     } catch (error) {
-        handleHttpError(res, "ERROR_CREATE_ITEM_COMMERCE")
+        handleHttpError(res, "ERROR_CREATE_ITEM_COMMERCE" + error)
     }
 }
 
