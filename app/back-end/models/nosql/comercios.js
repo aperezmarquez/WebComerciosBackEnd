@@ -6,8 +6,9 @@ const CommerceScheme = new mongoose.Schema(
     nombre: {
         type: String
     },
-    CIF: {
-        type: String
+    cif: {
+        type: String,
+        unique: true
     },
     direccion: {
         type: String

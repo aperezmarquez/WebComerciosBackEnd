@@ -2,17 +2,17 @@
 const express = require("express")
 const { getItems, createItem, getItem, updateItem, deleteItem } = require("../controllers/comercios")
 const router = express.Router()
-const { validatorCreateCommerce, validatorCIFCommerce } = require("../validators/comercios")
+const { validatorCreateCommerce, validatorCIFCommerce, validatorUpdateCommerce } = require("../validators/comercios")
 
-router.get("/all", getItems)
+router.get("/", getItems)
 
-router.get("/all/:CIF", getItem)
+router.get("/:cif", validatorCIFCommerce, getItem)
 
 router.post("/", validatorCreateCommerce, createItem)
 
-router.patch("/update/:CIF", updateItem)
+router.patch("/:cif", validatorUpdateCommerce, updateItem)
 
-router.delete("/delete/:CIF", deleteItem)
+router.delete("/:cif", validatorCIFCommerce, deleteItem)
 
 
 module.exports = router

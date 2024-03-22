@@ -4,7 +4,7 @@ const validateResults = require("../utils/handleValidator")
 
 const validatorCreateCommerce = [
     check("nombre").exists().notEmpty(),
-    check("CIF").exists().notEmpty(),
+    check("cif").exists().notEmpty(),
     check("direccion").exists().notEmpty(),
     check("mail").exists().notEmpty(),
     check("telefono").exists().notEmpty(),
@@ -15,10 +15,21 @@ const validatorCreateCommerce = [
 ]
 
 const validatorCIFCommerce = [
-    check("CIF").exists().notEmpty(),
+    check("cif").exists().notEmpty(),
     (req, res, next) => {
         return validateResults(req,res,next)
     }
 ]
 
-module.exports = { validatorCreateCommerce }
+const validatorUpdateCommerce = [
+    check("cif").exists().notEmpty(),
+    check("nombre"),
+    check("direccion"),
+    check("mail"),
+    check("telefono"),
+    (req, res, next) => {
+        return validateResults(req, res, next)
+    }
+]
+
+module.exports = { validatorCreateCommerce, validatorCIFCommerce, validatorUpdateCommerce }
