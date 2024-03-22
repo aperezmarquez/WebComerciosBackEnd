@@ -14,7 +14,7 @@ const validatorCreateCommerce = [
     }
 ]
 
-const validatorGetCommerce = [
+const validatorCIFCommerce = [
     check("CIF").exists().notEmpty(),
     (req, res, next) => {
         return validateResults(req,res,next)

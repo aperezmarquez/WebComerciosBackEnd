@@ -23,6 +23,33 @@ const createItem = async (req, res) => {
     }
 }
 
+const getItem = async (req, res) => {
+    try {
+        const CIF = req.params.CIF
+        const data = await commerceModel.findOne({CIF:CIF})
+    } catch (error) {
+        handleHttpError(res, "ERROR_GET_ITEM_COMMERCE")
+    }
+}
+
+const updateItem = async (req, res) => {
+    try {
+        const body = matchedData(req)
+        const CIF = req.params.CIF
+        const data =  await commerceModel.findOneAndUpdate({CIF:CIF}, body)
+    } catch (error) {
+        handleHttpError(res, "ERROR_UPDATE_ITEM_COMMERCE")
+    }
+}
+
+const deleteItem = async (req, res) => {
+    try {
+        const CIF = req.params.CIF
+        const data = await commerceModel.delete({CIF:CIF})
+    } catch (error) {
+        handleHttpError(res, "ERROR_DELETE_ITEM_COMMERCE")
+    }
+}
 
 
-module.exports = { createItem }
+module.exports = { getItems, createItem, getItem, updateItem, deleteItem }
