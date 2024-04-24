@@ -1,8 +1,8 @@
 // AÑADIMOS TODOS LOS MODELOS
 // Para poder acceder a todos ellos desde un unico punto
 const models = {
-    commerceModel: require("./nosql/comercios")
+    usersModel: require('./nosql/users'),
+    commerceModel: require('./nosql/commerce')
 }
 
-// Exportamos todos los modelos
 module.exports = models

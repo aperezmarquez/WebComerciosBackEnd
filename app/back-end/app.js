@@ -4,7 +4,7 @@ const cors = require("cors")
 require("dotenv").config()
 
 // CREAMOS APP DE MONGO Y LA FUNCION DBCONNECT PARA CONECTARNOS A MONGODB
-const dbConnect = require("./config/mongo")
+const { dbConnect } = require("./config/nosql")
 const app = express()
 app.use(cors())
 app.use(express.json())
